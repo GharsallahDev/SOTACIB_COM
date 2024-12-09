@@ -1,38 +1,130 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# SOTACIB Commercial Mobile App
 
-## Getting Started
+## Description
 
-First, run the development server:
+SOTACIB Commercial is a mobile application built with Next.js and Capacitor, designed to help SOTACIB's commercial team manage their visits and track points of sale locations.
+
+## Features
+
+- User Authentication
+- Interactive Map with Points of Sale
+- Visit Management
+- Client Management
+- Real-time Location Tracking
+- Offline Support
+- Visit Reports and Statistics
+
+## Technologies Used
+
+- Next.js 15.0.4
+- Capacitor
+- React
+- TailwindCSS
+- Leaflet Maps
+- Lucide Icons
+
+## Prerequisites
+
+- Node.js (v18 or later)
+- npm or yarn
+- Xcode (for iOS development)
+- Android Studio (for Android development)
+- iOS Simulator or physical iOS device
+- Android Emulator or physical Android device
+
+## Installation
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/yourusername/sotacib-commercial.git
+cd sotacib-commercial
+```
+
+2. Install dependencies:
+
+```bash
+npm install
+```
+
+3. Configure environment variables:
+
+```bash
+cp .env.example .env.local
+# Edit .env.local with your configuration
+```
+
+## Development
+
+### Web Development
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Visit [http://localhost:3000](http://localhost:3000)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Building for Mobile
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. Build the web assets:
 
-## Learn More
+```bash
+npm run static
+```
 
-To learn more about Next.js, take a look at the following resources:
+2. Add mobile platforms:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+# For iOS
+npx cap add ios
+npx cap sync
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+# For Android
+npx cap add android
+npx cap sync
+```
 
-## Deploy on Vercel
+3. Open native IDEs:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+# iOS
+npx cap open ios
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-# SOTACIB
-# SOTACIB_COM
+# Android
+npx cap open android
+```
+
+## Building for Production
+
+### iOS
+
+1. Open Xcode
+2. Select your team for signing
+3. Build and run on device/simulator
+
+### Android
+
+1. Open Android Studio
+2. Build > Generate Signed Bundle/APK
+3. Follow the signing process
+
+## Project Structure
+
+```
+sotacib-commercial/
+├── src/
+│   ├── app/               # Next.js pages and routes
+│   ├── components/        # React components
+│   └── styles/           # Global styles
+├── public/               # Static assets
+├── ios/                  # iOS native project
+└── android/             # Android native project
+```
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Commit your changes
+4. Push to the branch
+5. Create a Pull Request
